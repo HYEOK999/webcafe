@@ -1,0 +1,36 @@
+@charset "utf-8";
+/* css의 규칙 처음에는 charset을 선언 */
+
+body{
+    margin: 0;
+}
+
+.header, .visual, .main-content, .slogan, .footer{ /*선택자의 그룹핑*/
+    width: 940px;
+    margin: 0 auto; /* auto는 남은영역을 계산해서 잘 나누어줌. */
+}
+
+.header{
+    box-sizing: border-box; 
+    background-color: pink;
+    height: 10vh; /*vh : 화면에 보이는 기준 */
+}
+.visual{
+    background-color: lime;
+    height: 120px;
+}
+.main-content{
+    min-height: 400px;
+    background-color: skyblue;
+}
+.slogan{
+    background-color: orange;
+    padding: 15px 0;
+}
+.footer-bg{
+    background-color: silver;
+    padding: 15px 0;
+}
+.footer{
+    background-color: yellow;
+}
