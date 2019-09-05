@@ -1,5 +1,8 @@
 @charset "utf-8";
 /* css의 규칙 처음에는 charset을 선언 */
+*, *::before, *::after{
+    box-sizing: border-box;
+}
 
 body{
     margin: 0;
@@ -22,6 +25,37 @@ body{
 .main-content{
     min-height: 400px;
     background-color: skyblue;
+    display: flex; /* main-content를 flex 컨테이너로 지정 */
+    flex-direction: row;
+    justify-content: space-between; 
+    padding: 30px;
+    /* 
+    flex-end : 오른쪽 , 
+    space-around : flex-item들을 y축을 동일하게 비워줌.(abc가 있다면 a의 양옆+ b의 양옆)
+    space-between : flex-item들 y축 사이를 비워줌.
+    space-evenly : flex-item들의 y축을 동일하게 비워줌2. (abc가 있다면 a,b,c 사이를 완전 동일하게 해줌 단 익스플로러지원x)
+    */
+
+}
+.group{ /* flex item 들 */
+    background-color: yellow;
+}
+.group1{
+    flex-basis: 50px;
+    flex-grow: 2;
+    flex-shrink: 1;
+/*    flex: 50px 2 1;  */
+    background-color: orange;
+}
+.group2{
+    flex-basis: 100px;
+    flex-grow: 1;
+    background-color: lime;
+}
+.group3{
+    flex-basis: 100px;
+    flex-grow: 2;
+    background-color: white;
 }
 .slogan{
     background-color: orange;
