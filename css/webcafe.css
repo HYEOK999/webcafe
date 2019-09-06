@@ -1,14 +1,25 @@
 @charset "utf-8";
 @import url('https://necolas.github.io/normalize.css/latest/normalize.css');
 @import url('https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css');
+@import url('./fontello.css');
 /* css의 규칙 처음에는 charset을 선언 */
 *, *::before, *::after{
     box-sizing: border-box;
 }
 a{
-    text-decoration: none;
+    text-decoration: none; /*글자 선을 만들지 않는다. 하이퍼링크 밑줄 제거함*/
     color: inherit;
-    
+}
+/*숨긴 콘텐츠*/
+.a11y-hidden{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden; /* 넘치는 부분을 감쳐준다 */
+    clip: rect(0,0,0,0); /* 선행조건 : position:absolute 해당 화면을 잘라내서 보여줌 */
+    white-space: nowrap; /* 줄바꿈을 하지않음. */
+    opacity: 0; /* 투명도  */
 }
 html{
     font-size: 10px;
@@ -31,13 +42,14 @@ body{
     box-sizing: border-box;
     background-color: pink;
     position: relative;
-    padding: 10px 30px 50px 30px;
+    padding: 0px 30px 50px 30px;
 }
 /* 로고 */
 .logo{
     margin: 0px;
+    /* float: left; */
     position: absolute;
-    top: 50px;
+    top: 45px;
     left: 70px;
     /* 
     자신보다 상위요소를 기준으로 배치하는법 
@@ -56,22 +68,82 @@ body{
     justify-content: flex-end; */
     list-style-type: none;  /* circle : 빈 동그라미 */
     margin: 0;
-    padding-left: 0;
-    background-color: yellow;
+    padding : 2px 0;
     font-size: 0;
     /* member에 font size를 적용함으로써 공백을 삭제한다. */
     text-align: right;
-
+    position: relative;
+    right: -10px;
 }
 .member li{
     display: inline-block;
     /* flex-basis: 100px; */
-
-/* inline은 block과 다르게 줄바꿈이 안되고, width와 height가 적용되지 않는다. 오로지 적용된 글자 수에 따라서 크기가 결정된다. */
-    background-color: aqua;
+    /* inline은 block과 다르게 줄바꿈이 안되고, width와 height가 적용되지 않는다. 오로지 적용된 글자 수에 따라서 크기가 결정된다. */
     font-size: 1.4rem;
     text-transform: uppercase; /*UpperCase 는 영어를 대문자로 변환함*/    
 /* font-size에 rem을 적용함으로써 글씨크기를 살려냄 */
+}
+
+ /* .member li::before{
+    background-color: orange;
+    content: '\f142';
+    font-family:'fontello';
+}  *//* content: "가상요소 박스";     */
+
+.member li:nth-child(n+2)::before{
+    content: '\f142';
+    font-family:'fontello';
+    width: 1em;
+    /* display: inline-block;
+    margin: 0 .2em; */
+}
+
+/* .member li a 라고 주지말고 바로 a태그에 접근하라 */
+.member a{
+    padding : 8px 10px;
+    display: inline-block;
+}
+/* 메인메뉴 */
+.menu{
+    background-color: #f7aa2e;
+    background-image: linear-gradient(to bottom, #f4c730 0%,#f7aa2e 35%,#f7aa2e 70%,#f4c730 100%);
+    /* background-image: linear-gradient(to bottom, red, green,red); 시작 빨간색 , 끝 - 녹색 */
+    padding-left : 225px;
+    margin: 5px 0 0 5px;
+    list-style: none;
+    border-radius: 0 0 15px 15px;
+    /* border-top: 2px solid #000; */
+    box-shadow: 0 -2px 2px 0 black;
+    overflow: auto;
+}
+.menu::after{
+    background-color: lime;
+    content:"";
+    clear: both; 
+    /*  display:block 에서만 사용 가능. */
+    display: block;
+}
+.menu-item{
+    float: left;
+    /* 콘텐트들이 위에 따닥따닥 붙어잇다. */
+    /* height: 45px;  */
+    line-height: 45px;
+}
+.btn-menu{
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #fff;
+    /* 텍스트 쉐도우를 이용하여 그림자 설정하기. */
+    text-shadow: 1px 0 0 black, -1px 0 0 black, 0 1px 0 black, 0px -1px 0 black;
+}
+.sub-menu{
+    padding-left : 0;
+    margin: 0;
+    list-style: none;
+    background-color: yellow;
+    position: absolute;
+    display: none;
+     /* 임시 */
 }
 .visual{
     background-color: lime;
