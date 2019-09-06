@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>float</title>    
+    <style>
+    *{
+        margin: 0
+    }
+    h1{
+        background-color: yellow;
+
+    }
+    h2{
+        background-color: pink;
+    }
+    h3{
+        background-color: skyblue;
+        /* clear: both; */
+    }
+    .box{
+        background-color: lime;   
+        /* 
+        height: 50px; --- 강제로 높이를 주어 float로 잃어버린 높이를 깨워넴(안쓰는게 좋음)
+        overflow:hidden 은 원래 넘치는 content를 감추는 역할인데 이 속성은 잊혀진 높이등을 일깨워준다
+        따라서 float로 잃어버린 높이를 일깨워서 heading3를 밑으로 내린다.
+         */
+        overflow: hidden;
+         /*넘치는 값을 지워주세요.*/
+    }
+    .box2{
+        position: relative;
+        top:10px;
+    }
+    .box [class^="box"]{
+        /* border: 1px solid red; */
+        float: left;
+    }
+        /* hsla 는 색상 조절하는것. */
+
+    /* .box2{
+        background-color: hsla(30, 80%, 70%, 0.5);
+        float: left;
+        height: 50px; 
+     } */
+    /* width:230px; */
+    /* .box3{
+        background-color: blue;
+        clear:left;
+        margin-top: 200px;
+    } */
+    </style>
+</head>
+<body>
+    <h1>Heading1</h1>
+    <h2>Heading2</h2>
+    <div class="box">
+        <div class="box1">text text text1</div>
+        <div class="box2">float left right clear text text text2</div>
+        <div class="box3">3text text text3</div>
+        <div class="box4">45text text text4</div>
+    </div>
+    <h3>Heading3</h3>
+</body>
+</html>
