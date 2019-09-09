@@ -114,35 +114,52 @@ body{
     border-radius: 0 0 15px 15px;
     /* border-top: 2px solid #000; */
     box-shadow: 0 -2px 2px 0 black;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
-/* 
-.menu::after{ */
-    /* background-color: lime; */
-    /* content:""; */
-    /* clear: both;  */
-    /*  clear는 display:block 에서만 사용 가능. */
-    /* display: block; */
-/* } 
+
+.menu::after{ 
+    background-color: lime;
+    content:"";
+    clear: both; 
+     /* clear는 display:block 에서만 사용 가능. */
+    display: block;
+ }
+ /* 
 menu에서 overflow를 사용했기 떄문에 주석처리하였음.
 */
 .menu-item{
     float: left;
     /* 콘텐트들이 위에 따닥따닥 붙어잇다. */
     /* height: 45px;  */
-    /* line-height: 45px; */
 }
+
 .btn-menu{
+    line-height: 45px;
     border-left: 1px solid rgba(255,255,255, 0.5); 
     /* background-color: yellow; */
     display: block;
-    padding : 15px 20px;
+    padding : 0px 20px;
     font-weight: 700;
     font-size: 1.6rem;
     color: #fff;
     /* 텍스트 쉐도우를 이용하여 그림자 설정하기. */
     text-shadow: 1px 0 0 black, -1px 0 0 black, 0 1px 0 black, 0px -1px 0 black;
 }
+
+/* menu-after는 동적인 상황에 나와야할 스타일 */
+.menu-act .btn-menu{
+    color: yellow !important;
+    /* 
+    선택자의 구체성 규칙. 
+    important 지워도 됨. , 동적인것을 명시하기 위해 그대로둠.
+    */
+}
+.menu-act .btn-menu::after{
+    content : "";
+    display: block; /*부모영역크기 만큼 독립적인 상자 생성*/
+    border-top : 2px solid black;
+}
+
 .sub-menu{
     padding-left : 0;
     margin: 0;
@@ -151,6 +168,9 @@ menu에서 overflow를 사용했기 떄문에 주석처리하였음.
     position: absolute;
     display: none;
      /* 임시 */
+}
+.menu-act .sub-menu{
+    display: block;
 }
 .visual{
     background-color: lime;
