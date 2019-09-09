@@ -46,7 +46,7 @@ body{
 }
 /* 로고 */
 .logo{
-    margin: 0px;
+    margin: 0;
     /* float: left; */
     position: absolute;
     top: 45px;
@@ -134,7 +134,17 @@ body{
     /* height: 45px;  */
 }
 
+/* menu-after는 동적인 상황에 나와야할 스타일 */
+.menu-act .btn-menu{
+    color:#ff0 
+    /* 
+    선택자의 구체성 규칙. 
+    important 지워도 됨. , 동적인것을 명시하기 위해 그대로둠.
+    */
+}
+
 .btn-menu{
+    height: 45px;
     line-height: 45px;
     border-left: 2px solid rgba(255,255,255, 0.5); 
     /* background-color: yellow; */
@@ -147,13 +157,8 @@ body{
     text-shadow: 1px 0 0 black, -1px 0 0 black, 0 1px 0 black, 0px -1px 0 black;
 }
 
-/* menu-after는 동적인 상황에 나와야할 스타일 */
 .menu-act .btn-menu{
-    color: yellow !important;
-    /* 
-    선택자의 구체성 규칙. 
-    important 지워도 됨. , 동적인것을 명시하기 위해 그대로둠.
-    */
+    color: yellow   !important;
 }
 .menu-act .btn-menu::after{
     content : "";
@@ -172,10 +177,10 @@ body{
     /* white-space : nowtap -> 강제로 개행 금지  */
      /* 임시 */
 }
-.sub-menu li, .sub-menu1 a{
+.sub-menu li, .sub-menu a{
     display: inline-block;
 }
-.sub-menu1 a{
+.sub-menu a{
     padding: 10px 0 ;
     margin-right: 10px;
 }
@@ -183,10 +188,10 @@ body{
     display: block;
     top : 47px;
 }
-.sub-menu1 .sub-menu2 .sub-menu3{
+.sub-menu1, .sub-menu2, .sub-menu3{
     left: 0;
 }
-.sub-menu4 .sub-menu5 .sub-menu6{
+.sub-menu4, .sub-menu5, .sub-menu6{
     right: 0;
 }
 /* 비주얼 */
@@ -210,6 +215,12 @@ body{
         /* margin : 75px 0 0 400px; */
     }      /* to */
 }
+
+@keyframes bg-ani{
+    0%{ opacity: 1; }
+    100% { opacity: 0; }
+}
+
 .visual{
     position: relative;
     background-color: lime;
@@ -222,7 +233,14 @@ body{
     width: 100%;
     height: 100%;
     position: absolute;
+    /* animation-name: bg-ani;
+    animation-duration: 2000ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: paused; */
 
+    /* short 표기법 이름 듀레이션 딜레이 반복 방향 반복곡선도 */
+    animation: bg-ani 2000ms  1000ms infinite alternate ease-in-out;
 }
 .visual::before{
     /* background-color: silver; */
@@ -237,11 +255,12 @@ body{
 
 /* shortand 표기법 배경색은 마지막 요소 url 앞에 적어주어야한다. silver */
     background : url('./images//ani_flower_01.png') no-repeat 0 -10px,
-    url('./images/ani_flower_02.png') no-repeat 670px 0;
+                url('./images/ani_flower_02.png') no-repeat 670px 0;
     z-index: 10;
 }
 
 .visual::after{
+    animation-delay: 1000ms;
     background : url('./images//ani_flower_03.png') no-repeat 300px 0,
     url('./images/ani_flower_04.png') no-repeat 800px 15px;
 }
@@ -249,7 +268,7 @@ body{
 .visual-text{
     background-color:yellow;
     position: absolute;
-    animation-name: text-ani;
+    animation-name: text-ani; 
     animation-duration: 5s;
     animation-fill-mode: forwards;
     font-family: Georgia, 'Times New Roman', Times, serif;
