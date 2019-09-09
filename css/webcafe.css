@@ -222,8 +222,9 @@ body{
 }
 
 .visual{
-    position: relative;
     background-color: lime;
+    /* background: url(./images/bg_flower.png); */
+    position: relative;
     height: 120px;
     /*  */
 }
@@ -266,7 +267,7 @@ body{
 }
 
 .visual-text{
-    background-color:yellow;
+    background-color: yellow;
     position: absolute;
     animation-name: text-ani; 
     animation-duration: 5s;
