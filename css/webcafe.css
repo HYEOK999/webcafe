@@ -29,7 +29,6 @@ body{
     font-size: 1.4rem;
     margin: 0;
     color: #181818;
-    line-height: 1.15;
     font-family: 'Spoqa Han Sans', 'Sans-serif';
     font-weight: 400;
 }
@@ -52,13 +51,13 @@ body{
     position: absolute;
     top: 45px;
     left: 70px;
+        /* z-index: 10; */
     /* 
     자신보다 상위요소를 기준으로 배치하는법 
     단, 상위요소가 position:static;이 아니여야한다.
     만약 상위요소가 postion:static이라면 static이 아닌 상위요소를 찾을떄까지
     올라간다.
     : top,right,bottom,left */
-    /* z-index: 10; */
 }
 /* 멤버링크 */
 .member{
@@ -94,7 +93,6 @@ body{
 .member li:nth-child(n+2)::before{
     content: '\f142';
     font-family:'fontello';
-    width: 1em;
     /* display: inline-block;
     margin: 0 .2em; */
 }
@@ -110,11 +108,12 @@ body{
     background-image: linear-gradient(to bottom, #f4c730 0%,#f7aa2e 35%,#f7aa2e 70%,#f4c730 100%);
     /* background-image: linear-gradient(to bottom, red, green,red); 시작 빨간색 , 끝 - 녹색 */
     padding-left : 225px;
-    margin: 5px 0 0 5px;
+    margin: 5px 0 0 0;
     list-style: none;
-    border-radius: 0 0 15px 15px;
+    border-radius: 0 0 5px 5px;
     /* border-top: 2px solid #000; */
     box-shadow: 0 -2px 2px 0 black;
+    /* height : 45px; */
     /* overflow: hidden; */
 }
 
@@ -125,7 +124,7 @@ body{
      /* clear는 display:block 에서만 사용 가능. */
     display: block;
  }
- /* 
+/* 
     menu에서 overflow를 사용했기 떄문에 주석처리하였음.
 */
 .menu-item{
@@ -137,7 +136,7 @@ body{
 
 .btn-menu{
     line-height: 45px;
-    border-left: 1px solid rgba(255,255,255, 0.5); 
+    border-left: 2px solid rgba(255,255,255, 0.5); 
     /* background-color: yellow; */
     display: block;
     padding : 0px 20px;
@@ -190,10 +189,41 @@ body{
 .sub-menu4 .sub-menu5 .sub-menu6{
     right: 0;
 }
+/* 비주얼 */
+@keyframes text-ani{
+    0%{
+        font-size: 12px;
+        color : rgba(0,0,0,0);
+        /* top: 0;
+        left: 0; */
+        /* padddig : 75px 0 0 400px */
+        /* margin : 0; */
+        transform: translate(0,0);
+    }        /* from */
+    100%{
+        font-size : 24px;
+        color : rgba(0,0,0,1);
+        transform: translate(400px,75px);
+        /* top : 75px;
+        left : 400px; */
+        /* padding : 75px 0 0 400px */
+        /* margin : 75px 0 0 400px; */
+    }      /* to */
+}
 .visual{
+    position: relative;
     background-color: lime;
     height: 120px;
+    /*  */
 }
+.visual-text{
+    background-color:yellow;
+    position: absolute;
+    animation-name: text-ani;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
 .main-content{
     min-height: 400px;
     background-color: skyblue;
