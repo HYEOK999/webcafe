@@ -114,22 +114,29 @@ body{
     border-radius: 0 0 15px 15px;
     /* border-top: 2px solid #000; */
     box-shadow: 0 -2px 2px 0 black;
-    overflow: auto;
+    overflow: hidden;
 }
-.menu::after{
-    background-color: lime;
-    content:"";
-    clear: both; 
-    /*  display:block 에서만 사용 가능. */
-    display: block;
-}
+/* 
+.menu::after{ */
+    /* background-color: lime; */
+    /* content:""; */
+    /* clear: both;  */
+    /*  clear는 display:block 에서만 사용 가능. */
+    /* display: block; */
+/* } 
+menu에서 overflow를 사용했기 떄문에 주석처리하였음.
+*/
 .menu-item{
     float: left;
     /* 콘텐트들이 위에 따닥따닥 붙어잇다. */
     /* height: 45px;  */
-    line-height: 45px;
+    /* line-height: 45px; */
 }
 .btn-menu{
+    border-left: 1px solid rgba(255,255,255, 0.5); 
+    /* background-color: yellow; */
+    display: block;
+    padding : 15px 20px;
     font-weight: 700;
     font-size: 1.6rem;
     color: #fff;
