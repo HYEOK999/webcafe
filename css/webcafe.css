@@ -216,12 +216,43 @@ body{
     height: 120px;
     /*  */
 }
+
+.visual::before, .visual::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+}
+.visual::before{
+    /* background-color: silver; */
+    /*배경이미지는 거꾸로임*/
+    /* background-image: url('./images/ani_flower_01.png'),url('./images/ani_flower_02.png');  */
+    /* 모든 배경이미지 repeat 출력되고있다. */
+    /* background-repeat: no-repeat; */
+    /* 프로젝트 할 때는 이미지 여백을 주어서는 안된다. */
+    /* background-position: 0 -10px, 670px 0;     */
+    /* x축 y축 */
+
+
+/* shortand 표기법 배경색은 마지막 요소 url 앞에 적어주어야한다. silver */
+    background : url('./images//ani_flower_01.png') no-repeat 0 -10px,
+    url('./images/ani_flower_02.png') no-repeat 670px 0;
+    z-index: 10;
+}
+
+.visual::after{
+    background : url('./images//ani_flower_03.png') no-repeat 300px 0,
+    url('./images/ani_flower_04.png') no-repeat 800px 15px;
+}
+
 .visual-text{
     background-color:yellow;
     position: absolute;
     animation-name: text-ani;
     animation-duration: 5s;
     animation-fill-mode: forwards;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .main-content{
