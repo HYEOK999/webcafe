@@ -42,6 +42,7 @@ body{
     box-sizing: border-box;
     background-color: pink;
     position: relative;
+    /* logo의 기준으로 삼기 위해서 */
     padding: 0px 30px 50px 30px;
 }
 /* 로고 */
@@ -57,13 +58,13 @@ body{
     만약 상위요소가 postion:static이라면 static이 아닌 상위요소를 찾을떄까지
     올라간다.
     : top,right,bottom,left */
-
+    /* z-index: 10; */
 }
 /* 멤버링크 */
 .member{
     /* 불릿제거 */
     /* display: flex;
-    flex-direction: row;
+    flex-drection: row;
     align-items: center;
     justify-content: flex-end; */
     list-style-type: none;  /* circle : 빈 동그라미 */
@@ -125,9 +126,10 @@ body{
     display: block;
  }
  /* 
-menu에서 overflow를 사용했기 떄문에 주석처리하였음.
+    menu에서 overflow를 사용했기 떄문에 주석처리하였음.
 */
 .menu-item{
+    position: relative;
     float: left;
     /* 콘텐트들이 위에 따닥따닥 붙어잇다. */
     /* height: 45px;  */
@@ -167,10 +169,26 @@ menu에서 overflow를 사용했기 떄문에 주석처리하였음.
     background-color: yellow;
     position: absolute;
     display: none;
+    white-space: nowrap; 
+    /* white-space : nowtap -> 강제로 개행 금지  */
      /* 임시 */
+}
+.sub-menu li, .sub-menu1 a{
+    display: inline-block;
+}
+.sub-menu1 a{
+    padding: 10px 0 ;
+    margin-right: 10px;
 }
 .menu-act .sub-menu{
     display: block;
+    top : 47px;
+}
+.sub-menu1 .sub-menu2 .sub-menu3{
+    left: 0;
+}
+.sub-menu4 .sub-menu5 .sub-menu6{
+    right: 0;
 }
 .visual{
     background-color: lime;
