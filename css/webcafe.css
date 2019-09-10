@@ -328,7 +328,6 @@ body{
     padding : 10px 10px 0 10px;
 }
 
-
 .login-form fieldset{
     position: relative;
     border: 0;
@@ -336,15 +335,20 @@ body{
     padding : 0 0 10px 0;
 } 
 
+.login-form label{
+    width: 4em; /*4글자 만큼*/
+    display: inline-block;
+}
+
 .login-form input{
-    width : 95px;
-    height : 24px;
+    width : 90px;
+    height : 22px;
     border : 1px solid #aaa;
     padding : 1px 1px 1px 5px;
 }
 
 .user-pw {
-    margin-top : 5px;
+    margin-top : 6px;
 }
 
 .btn-login{
@@ -361,14 +365,10 @@ body{
     /* font : inherit -> Window 에서는 글꼴이 다를수도 있기 때문에 넣어둔다. */
 }
 
-.login-form label{
-    width: 4em; /*4글자 만큼*/
-    display: inline-block;
-}
-
 .sign{
     margin : 0;
-    padding : 10px ;
+    padding-left : 0;
+    padding : 10px;
     border-radius: 0 0 5px 5px;
     background-color: white;
     list-style : none;
@@ -384,14 +384,152 @@ body{
     font-size: 1.3rem;
 }
 
+/* 유효성 검사 배너 */
+
+.validation-list{
+    list-style: none;
+    padding : 0;
+    margin : 25px 0 20px 0; /*위쪽의 박스쉐도우 때문에 설정함*/
+}
+
+.validation-list li{
+    margin : 10px 0;
+}
+
+.validation-list a{
+    background : url('./images/validation_icon.png') no-repeat 20px 50%, linear-gradient(#ccc,#eee) repeat 0 0;
+    display : block;
+    border : 1px solid #aaa;
+    border-radius: 30px;
+    padding : 8px 0 8px 45px;
+}
+
+/* 웹 관련 용어 */
+.term{
+    background:#ccc linear-gradient(#ccc, #eee);
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    padding: 10px 15px;
+}
+.term-heading{
+    margin: 0;
+    font-size: 1.5rem;
+}
+.term-list{
+    margin: 10px 0 0 0;
+}
+.odd, .even{
+    margin-top: 15px;
+}
+.odd::after, .even::after{
+    content: "";
+    clear: both;
+    display: block;
+}
+.odd .term-list-subject, .odd .term-list-brief{
+    float: right;
+}
+.odd .term-list-thumbnail{
+    float: left;
+}
+.even .term-list-subject, .even .term-list-brief{
+    float: left;
+}
+.even .term-list-thumbnail{
+    float: right;
+}
+
+.term-list-thumbnail, .term-list-brief{
+    margin: 0;
+}
+.term-list-subject, .term-list-brief{
+    width: 145px;
+}
+.term-list-subject{
+    margin: -2px 0 5px 0;
+}
+.term-list-thumbnail img{
+    vertical-align: top;
+}
+.term-list-brief{
+    line-height: 1.5;
+}
+
+/* .validation{
+    margin : 20px 0;
+}
+
+.validation-list{
+    list-style : none;
+    padding : 0;    
+}
+
+.validation-list a::before{
+    padding : 8px 8px 0 20px;
+    content: url(./images/validation_icon.png);
+}
+
+.validation-list li{
+    padding : 5px 0;
+    margin: 0 0 10px 0;
+    background-image: linear-gradient(to top, #e8e6e2 ,#acaca8 100%);
+    border-radius: 20px;
+    border: 1px solid rgb(128, 127, 127);
+}
+
+.validation a{
+    padding : 0 0 0 10px;
+    display: block;
+} */
+
+/* .term {
+    border: 1px solid #666;
+    border-radius: 5px;
+    background :#ccc linear-gradient(#ccc, #eee);
+}
+
+.term-heading {
+    padding: 15px 0 20px 15px;
+    margin: 0;
+    font-size : 1.5rem;
+}
+
+.term-list {
+    margin: 0;
+}
+
+.term-list dd {
+    margin: 0;
+}
+
+.term-list-subject {
+    display: inline-block;
+    color: #296897;
+}
+
+.term-list-thumbnail {
+    float:left;
+}
+
+.term-list-thumbnail img {
+    margin: 0 15px 0 15px;
+}
+
+.term-list-brief {
+    padding: 10px 15px 10px 0;
+    line-height: 20px;
+} */
+
 .slogan{
     background-color: orange;
     padding: 15px 0;
 }
+
 .footer-bg{
     background-color: silver;
     padding: 15px 0;
 }
+
 .footer{
     background-color: yellow;
 }
