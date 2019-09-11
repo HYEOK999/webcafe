@@ -6,6 +6,8 @@
     <title>웹카페-HTML5,CSS3,웹표준,웹접근성</title>
     <!-- <link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css"> -->
     <link rel="stylesheet" href="./css/webcafe.css">
+    <script src="./js/jquery.min.js" defer></script>
+    <script src="./js/webcafe.js" defer></script>
 </head>
 <body>     
     <!-- 헤더시작 -->
@@ -205,7 +207,7 @@
                 <h2 class="a11y-hidden"> 자료 검색 </h2>
                 <form class="search-form" action="https://formspree.io/iasg2004@gmail.com" method="POST">
                     <fieldset class="search-input-data">
-                        <legend class="a11y-hidden"> 자료검색 입력 폼 </legend>
+                        <legend> 자료검색 입력 폼 </legend>
                         <label for="search-data" class="icon-search">자료검색</label>
                         <input type="search" id="search-data" name="DATA" placeholder="검색어를 입력하세요." required>
                         <button type="submit" class="btn-search">검색</button>
@@ -214,56 +216,61 @@
             </section>
             <div class="board">
                 <section class="notice tab-act">
-                  <h2 class="tab notice-heading" id="notice-heading">공지사항</h2>
+                  <h2 class="notice-heading">
+                      <a href="#" class="tab" role="button" id="notice">공지사항</a>
+                    </h2>
                   <ul class="notice-list">
-                    <li>
+                    <li class="icon-dot-circled">
                       <a href="#">HTML의 모든 것을 알려주마 샘플 활용법</a>
                       <time datetime="2018-05-31T13:53:45">2018.05.31</time>
                     </li>
-                    <li>
+                    <li class="icon-dot-circled">
                       <a href="#">W3C 사이트 리뉴얼 및 공지사항</a>
                       <time datetime="2018-05-31T13:53:45">2018.05.31</time>
                     </li>
-                    <li>
+                    <li class="icon-dot-circled"> 
                       <a href="#">KWCAG 2.1 소식</a>
                       <time datetime="2018-05-31T13:53:45">2018.05.31</time>
                     </li>
-                    <li>
+                    <li class="icon-dot-circled">
                       <a href="#">서버 점검으로 인한 사이트 이용안내 입니다.</a>
                       <time datetime="2018-05-31T13:53:45">2018.05.31</time>
                     </li>
-                    <li>
+                    <li class="icon-dot-circled">
                       <a href="#">여러분들이 생각하는 웹 접근성에 대해 이야기를 나누어 봅시다.</a>
                       <time datetime="2018-05-31T13:53:45">2018.05.31</time>
                     </li>
                   </ul>
-                  <a href="#" class="icon-plus notice-more" title="공지사항" aria-labelledby="notice-heading">더보기</a>
+                  <a href="#" class="icon-plus notice-more more" title="공지사항" aria-labelledby="notice">더보기</a>
+                  <!-- 위 a링크는 공지사항 더보기 : aria-labelledby="notice" 가 id가 "notice"인것을 연결해준다.-->
                 </section>
                 <section class="pds">
-                  <h2 class="tab pds-heading" id="pds-heading">자료실</h2>
+                  <h2 class="pds-heading" id="pds-heading">
+                        <a href="#" class="tab" role="button" id="pds">자료실</a>
+                  </h2>
                   <ul class="pds-list">
-                    <li>
+                    <li class="icon-dot-circled">
                       <a href="#">디자인 사이트 링크 모음</a>
                       <time datetime="2018-05-31T13:53:45">2018.05.31</time>
                     </li>
-                    <li>
+                    <li class="icon-dot-circled">
                       <a href="#">웹 접근성 관련 자료 모음</a>
                       <time datetime="2018-05-31T13:53:45">2018.05.31</time>
                     </li>
-                    <li>
+                    <li class="icon-dot-circled">
                       <a href="#">예제 샘플 응용해보기</a>
                       <time datetime="2018-05-31T13:53:45">2018.05.31</time>
                     </li>
-                    <li>
+                    <li class="icon-dot-circled">
                       <a href="#">웹 접근성 향상을위한 국가 표준 기술 가이드라인</a>
                       <time datetime="2018-05-31T13:53:45">2018.05.31</time>
                     </li>
-                    <li>
+                    <li class="icon-dot-circled">
                       <a href="#">로얄티 프리 이미지 자료</a>
                       <time datetime="2018-05-31T13:53:45">2018.05.31</time>
-                    </li>
+                    </li>  
                   </ul>
-                  <a href="#" class="icon-plus pds-more" title="자료실" aria-labelledby="pds-heading">더보기</a>
+                  <a href="#" class="icon-plus pds-more more" title="자료실" aria-labelledby="pds">더보기</a>
                 </section>
               </div>
         </div>

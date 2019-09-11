@@ -468,12 +468,14 @@ body{
     border : 0;
     margin : 0;
     padding : 0;
+    /* display: flex; */
 }
 /* 
 div .contatiner{
     display : flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
 } 
 */
 
@@ -499,6 +501,93 @@ input[type="search"]{
     padding : 0 10px;
     height : 24px;
     font-size : 1.3rem;
+}
+
+/* 게시판 */
+.board{
+    background-color: yellow;
+    position: relative;
+}
+
+.board ul,.board .more{
+    display: none;
+}
+
+.tab-act ul, .tab-act .more{
+    display:block !important;
+}
+.notice-heading , .pds-heading{
+    margin : 0;
+    font-weight: 400;
+    font-size: 1em;
+    background-color:skyblue;
+    position: absolute;
+    top :0;
+}
+
+.notice-heading{
+    left : 0;
+}
+
+.pds-heading{
+    left : 73px;
+}
+
+.tab{
+    display: block;
+    border : 1px solid #aaa;
+    border-radius: 5px 5px 0 0;
+    background: #ccc linear-gradient(#ccc, #eee);
+    padding : 5px 10px;
+    color: #666;
+}
+
+.tab-act .tab{
+    color:orange;
+    border-color: #f7aa2e #f7aa2e #fff #f7aa2e;
+    background: #fff;
+}
+
+.board ul{
+    background:gold;
+    margin : 20px 0;
+    padding : 45px 0 0 0 ;
+    list-style: none;
+}
+
+.board li{
+    margin : 8px 0 ;
+    background-color: lime;
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+.board li>a{
+
+}
+
+.board li a {
+    background-color: silver;
+    /* width: 100%; */
+    width: 270px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+}
+
+.board time{
+    background-color: orange;
+    margin-left : auto;
+}
+
+.board .more{
+    background-color: silver;
+    position: absolute;
+    top : 0;
+    right : 0;
+}
+.more::before{
+    color : hsla(110,80%,20%,1);
 }
 
 /* .search{
