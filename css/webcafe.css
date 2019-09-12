@@ -606,6 +606,56 @@ input[type="search"]{
     border-left: none;
 }
 
+.news-link{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.news-list{
+    background-color: gold;
+    margin: 0;
+    padding : 0 0 0 20px;
+    width :70%;
+    float : right;
+}
+.news-title span{
+    font-weight: bold;
+}
+
+.news-title , .news-description, .news-thumbnail{
+    padding : 0;
+    margin : 0;
+}
+
+.news-title time{
+    line-height: 1.8;
+}
+
+.news-description{
+    margin : 15px 0 0 0;
+    line-height: 1.5;
+}
+
+.news-thumbnail{
+    width: 30%;
+
+    /* background-color: skyblue; */
+    float: left;
+    height: 139px;
+}
+
+.news-thumbnail-image{
+    margin : 0 0 25px 0;
+    box-shadow: 0 10px 20px  #666;
+}
+
+.news-thumbnail-title{
+    /* clear: both */
+    display: block;
+    text-align: center;
+}
+
 .news-more{
     /* background-color: silver; */
     position: absolute;
