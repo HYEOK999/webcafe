@@ -508,14 +508,15 @@ input[type="search"]{
     background-color: yellow;
     position: relative;
 }
-
+/* 게시판 리스트와 더보기 버튼(링크) 안보이게 설정 */
 .board ul,.board .more{
     display: none;
-}
-
+} 
+/* 공지사항 부분 다시 보이게 설정 우선순위 최상위로 높임 */
 .tab-act ul, .tab-act .more{
     display:block !important;
 }
+
 .notice-heading , .pds-heading{
     margin : 0;
     font-weight: 400;
@@ -549,7 +550,6 @@ input[type="search"]{
 }
 
 .board ul{
-    background:gold;
     margin : 20px 0;
     padding : 45px 0 0 0 ;
     list-style: none;
@@ -562,10 +562,6 @@ input[type="search"]{
     /* justify-content: space-between; */
 }
 
-.board li>a{
-
-}
-
 .board li a {
     background-color: silver;
     /* width: 100%; */
@@ -576,7 +572,7 @@ input[type="search"]{
 }
 
 .board time{
-    background-color: orange;
+    background-color: rgb(206, 84, 62);
     margin-left : auto;
 }
 
@@ -589,6 +585,14 @@ input[type="search"]{
 .more::before{
     color : hsla(110,80%,20%,1);
 }
+
+/* 
+.news-link dt, .news-link dt>span, .news-link dt>time{
+    float: right;
+}
+.news-link dd, .news-link dd p{
+    display: inline;
+} */
 
 /* .search{
     background: linear-gradient(to top , rgb(223, 221, 221), rgb(201, 200, 200));
