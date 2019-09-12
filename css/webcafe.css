@@ -606,6 +606,16 @@ input[type="search"]{
     border-left: none;
 }
 
+.news-more{
+    /* background-color: silver; */
+    position: absolute;
+    top : 0;
+    right : 0;
+}
+
+.news-more::before{
+    color : hsla(110,80%,20%,1);
+}
 /* 
 .news-link dt, .news-link dt>span, .news-link dt>time{
     float: right;
