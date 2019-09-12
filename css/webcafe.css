@@ -586,6 +586,26 @@ input[type="search"]{
     color : hsla(110,80%,20%,1);
 }
 
+/* 새소식 */
+.news{
+    /* background-color: yellow; */
+    position : relative;
+}
+
+.news-heading{
+    /* background-color: lime; */
+    margin : 20px 0;
+    padding : 0 0 15px 0;
+    width : 80%;
+    font-size : 1.5rem;
+    color: #bb7b13;
+    border-style: solid;
+    border-image: linear-gradient(to right, rgb(168, 167, 167), rgb(228, 228, 228));
+    border-image-slice: 0 0 1 0;
+    border-image-width: 0 0 1px 0;
+    border-left: none;
+}
+
 /* 
 .news-link dt, .news-link dt>span, .news-link dt>time{
     float: right;
