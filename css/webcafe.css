@@ -613,7 +613,6 @@ input[type="search"]{
 }
 
 .news-list{
-    background-color: gold;
     margin: 0;
     padding : 0 0 0 20px;
     width :70%;
@@ -639,7 +638,6 @@ input[type="search"]{
 
 .news-thumbnail{
     width: 30%;
-
     /* background-color: skyblue; */
     float: left;
     height: 139px;
@@ -666,110 +664,6 @@ input[type="search"]{
 .news-more::before{
     color : hsla(110,80%,20%,1);
 }
-/* 
-.news-link dt, .news-link dt>span, .news-link dt>time{
-    float: right;
-}
-.news-link dd, .news-link dd p{
-    display: inline;
-} */
-
-/* .search{
-    background: linear-gradient(to top , rgb(223, 221, 221), rgb(201, 200, 200));
-    border : 1px solid #666;
-    border-radius: 15px 15px 0 0;
-    border-bottom : none;
-    padding : 10px 10px 0 10px;
-}
-
-.search fieldset{
-    border : 0;
-    margin : 0;
-    padding : 5px 10px;
-}
-
-.search input{
-    font-size : 1.4rem;
-    border : 1px solid #666;
-    border-radius : 3px;
-    padding : 5px;
-    width: 210px;
-}
-
-.btn-search{
-    margin : 0 0 0px 1px;
-    border-radius: 3px;
-    border : 1px solid #666;
-    font-size : 1.2rem;
-    padding : 5px 7px;
-    color:white;
-    background-color: black;
-} */
-
-/* .validation{
-    margin : 20px 0;
-}
-
-.validation-list{
-    list-style : none;
-    padding : 0;    
-}
-
-.validation-list a::before{
-    padding : 8px 8px 0 20px;
-    content: url(./images/validation_icon.png);
-}
-
-.validation-list li{
-    padding : 5px 0;
-    margin: 0 0 10px 0;
-    background-image: linear-gradient(to top, #e8e6e2 ,#acaca8 100%);
-    border-radius: 20px;
-    border: 1px solid rgb(128, 127, 127);
-}
-
-.validation a{
-    padding : 0 0 0 10px;
-    display: block;
-} */
-
-/* .term {
-    border: 1px solid #666;
-    border-radius: 5px;
-    background :#ccc linear-gradient(#ccc, #eee);
-}
-
-.term-heading {
-    padding: 15px 0 20px 15px;
-    margin: 0;
-    font-size : 1.5rem;
-}
-
-.term-list {
-    margin: 0;
-}
-
-.term-list dd {
-    margin: 0;
-}
-
-.term-list-subject {
-    display: inline-block;
-    color: #296897;
-}
-
-.term-list-thumbnail {
-    float:left;
-}
-
-.term-list-thumbnail img {
-    margin: 0 15px 0 15px;
-}
-
-.term-list-brief {
-    padding: 10px 15px 10px 0;
-    line-height: 20px;
-} */
 
 .slogan{
     background-color: orange;
