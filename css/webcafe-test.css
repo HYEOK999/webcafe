@@ -1,15 +1,10 @@
 @charset "utf-8";
-@import url("https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
-@import url("https://necolas.github.io/normalize.css/latest/normalize.css");
+@import url('https://necolas.github.io/normalize.css/latest/normalize.css');
+@import url('https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css');
 @import url('./fontello.css');
 
 *, *::before, *::after{
     box-sizing: border-box;
-}
-
-a{
-    text-decoration: none;
-    color : inherit;
 }
 
 html{
@@ -17,60 +12,148 @@ html{
 }
 
 body{
+    font-size: 14px;
     margin : 0;
-    color: black;
-    font-size: 1.4rem;
-    font-family: 'Spoqa Han Sans','Sans-serif'; 
-    background-color: gray;
+    color : #181818;
+    font-weight: 400;
+    background: grey;
+    font-family: 'Spoqa Han Sans', 'Sans-serif';
 }
 
-.header , .slogan, .main-content, .visual, .footer{
+a{
+    text-decoration: none;
+    color : inherit;
+}
+
+.a11y-hidden, legend{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden; /* 넘치는 부분을 감쳐준다 */
+    clip: rect(0,0,0,0); /* 선행조건 : position:absolute 해당 화면을 잘라내서 보여줌 */
+    white-space: nowrap; /* 줄바꿈을 하지않음. */
+    opacity: 0; /* 투명도  */
+}
+
+.header , .visual, .main-content, .slogun, .footer{
     width: 940px;
     margin : 0 auto;
 }
+
 .header{
     box-sizing: border-box;
-    background-color: pink;
     position: relative;
-    padding: 0px 30px 50px 30px;
+    padding : 0 30px 50px 30px;
+    background: white;
 }
 
-.logo{
+.main-logo{
     margin : 0;
     position: absolute;
     top : 45px;
-    left : 75px;
+    left : 70px;
 }
 
 .member{
-    list-style: none;
-    position : relative;
-    text-align: right;
-    margin: 0;
-    padding : 2px 0;
     font-size: 0;
+    margin : 0;
+    padding : 2px 0;
+    list-style: none;
+    text-align: right;
+    position: relative;
     right : -10px;
 }
 
-.member li{
-    display: inline-block;
-    font-size: 1.4rem;
-    text-transform: uppercase;
-
-}
-.member a{
-    padding : 8px 10px;
-    display: inline-block;
-}
-
-.member li:nth-child(n+2):before {
+.member li:nth-child(n+2)::before{
     content: '\f142';
     font-family: 'fontello';
 }
 
-.slogan{
-    width: 940px;
-    margin: 0 auto;
-    background-color: green;
+.member li{
+    font-size: 1.4rem;
+    display: inline-block;
+    
 }
 
+.member a{
+    padding : 8px 10px;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.menu{
+    background: orange  linear-gradient(to bottom, #f4c730 0%,#f7aa2e 35%,#f7aa2e 70%,#f4c730 100%);
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 -2px 2px 0 black;
+    margin : 5px 0 0 0;
+    padding-left : 225px;
+    list-style: none;
+
+}
+
+.menu-item{
+    position: relative;
+    display : inline-block;
+}
+/* .menu::after{ 
+    background-color: lime;
+    content:"";
+    clear: both; 
+    display: block;
+ } */
+/* .menu-item{
+    list-style: none;
+    position: relative;
+    float: left;
+} */
+
+.menu-act .btn-menu{    
+    color : yellow !important;
+}
+
+.btn-menu{
+    display: block;
+    color : white;
+    margin-left: -2px;
+    height: 45px;
+    border-left: 2px solid rgba(255,255,255, 0.5); 
+    padding : 0 20px;
+    font-weight: 700;
+    line-height: 45px;
+    font-size: 1.6rem;
+    text-shadow: 1px 0 0 black, -1px 0 0 black, 0 1px 0 black, 0px -1px 0 black;
+}
+
+/* 선택시 밑줄 */
+.menu-act .btn-menu::after{
+    content : "";
+    display: block;
+    border-top : 2px solid black;
+}
+.sub-menu{
+    padding-left : 0;
+    margin: 0 0 0 -2px;
+    list-style: none;
+    background-color: yellow;
+    position: absolute;
+    display: none;
+    white-space: nowrap; 
+}
+.sub-menu li, .sub-menu a{
+    display: inline-block;
+}
+.sub-menu a{
+    padding: 10px 0 ;
+    margin-right: 10px;
+}
+.menu-act .sub-menu{
+    display: block;
+    top : 47px;
+}
+.sub-menu1, .sub-menu2, .sub-menu3{
+    left: 0;
+}
+.sub-menu4, .sub-menu5, .sub-menu6{
+    right: 0;
+}
