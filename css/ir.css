@@ -1,0 +1,45 @@
+@charset "utf-8";
+/* padding을 활용한  IR 기법 */
+.brand1{
+    background:yellow url(../images/title.png) no-repeat;
+    height: 0;
+    width: 290px;
+    padding-top: 195px;
+    overflow: hidden;
+}
+/* text-indent 트릭을 이용한 IR 기법 */
+.brand2{
+    background:pink url(../images/title.png) no-repeat;
+    height: 195px;
+    width: 290px;
+    text-indent: 290px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* 위 2가지 트릭의 단점 -> 네트워크의 오류로 인해 이미지가 안날라올경우 문제가 있다. */
+
+/* 한줄일때만 이용 가능한 트릭. position트릭. 
+네트워크 오류로 이미지가 안날라올경우 가상요소는
+ 안보이고 덮어쓰기 전의 내용이 보인다. */
+
+.brand3{
+    background: lime;
+    height: 195px;
+    line-height: 195px; 
+    width: 290px;
+    text-align: center;
+    font-size : 16px;
+    font-weight: 400;
+    position : relative;
+}
+
+.brand3::after{
+    content: "";
+    position: absolute;
+    background: orange url(../images/title.png);
+    width: 100%;
+    height : 100%;
+    top: 0;
+    left : 0;
+}

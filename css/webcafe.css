@@ -304,6 +304,7 @@ body{
     /* flex-grow: 1; */
 }
 .group3{
+    background-color: skyblue;
     flex-basis: 190px;
     /* flex-grow: 2; */
 }
@@ -736,6 +737,11 @@ input[type="search"]{
     color : hsla(110,80%,20%,1);
 } */
 
+/* 신규이벤트 및 관련사이트 */
+.gradient-box{
+    background:yellow;
+
+}
 
 
 .slogan{
