@@ -299,7 +299,7 @@ body{
 /*    flex: 50px 2 1;  */
 }
 .group2{
-    background-color: pink;
+    /* background-color: pink; */
     flex-basis: 380px;
     /* flex-grow: 1; */
 }
@@ -588,12 +588,86 @@ input[type="search"]{
 
 /* 새소식 */
 .news{
-    /* background-color: yellow; */
+    margin-top: 20px;
+    position: relative;
+}
+
+.news::before{
+    content: "";
+    background: red linear-gradient(to right,#aaa,#fff);
+    position : absolute;
+    top : 30px;
+    left : 0;
+    width: 80%;
+    height: 1px;
+}
+
+.news-heading{
+    color: red;
+    margin : 0;
+    font-size : 1.5rem;
+}
+
+.news-link{
+    display: block;
+}
+.news-article{
+    padding-left:130px;
+    position: relative;
+    min-height : 150px;
+}
+
+.news-article-subject{
+    margin : 30px 0 0 0;
+    font-size: 1.4rem;
+    font-weight: 450;
+    /* background: skyblue; */
+}
+
+.news-article-date{
+    margin : 5px 0 10px ;
+    display: block;
+}
+
+.news-article-brief{
+    margin: 0;
+    line-height: 1.5;
+}
+
+.news-article-thumbnail{
+    margin : 0;
+    position: absolute;
+    top : 3px;
+    left : 0;
+}
+
+.news-article-thumbnail img{
+    /* x y 번짐값  */
+    box-shadow: 0 15px 15px 0 #aaa;
+}
+
+.news-article-thumbnail figcaption{
+    text-align: center;
+    margin-top : 15px;
+}
+
+.news-more::before{ 
+    color : green;
+}
+
+.news-more{
+    padding : 5px;
+    position: absolute;
+    top : -5px;
+    right : -5px;
+}
+
+
+/* .news{
     position : relative;
 }
 
 .news-heading{
-    /* background-color: lime; */
     margin : 20px 0;
     padding : 0 0 15px 0;
     width : 80%;
@@ -638,7 +712,6 @@ input[type="search"]{
 
 .news-thumbnail{
     width: 30%;
-    /* background-color: skyblue; */
     float: left;
     height: 139px;
 }
@@ -649,13 +722,11 @@ input[type="search"]{
 }
 
 .news-thumbnail-title{
-    /* clear: both */
     display: block;
     text-align: center;
 }
 
 .news-more{
-    /* background-color: silver; */
     position: absolute;
     top : 0;
     right : 0;
@@ -663,7 +734,9 @@ input[type="search"]{
 
 .news-more::before{
     color : hsla(110,80%,20%,1);
-}
+} */
+
+
 
 .slogan{
     background-color: orange;
