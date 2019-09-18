@@ -339,6 +339,7 @@ body{
 .login-form label{
     width: 4em; /*4글자 만큼*/
     display: inline-block;
+    cursor: pointer;
 }
 
 .login-form input{
@@ -688,7 +689,7 @@ input[type="search"]{
 }
 
 .news-heading{
-    color: red;
+    color: #ed8625;
     margin : 0;
     font-size : 1.5rem;
 }
@@ -820,13 +821,69 @@ input[type="search"]{
 
 /* 신규이벤트 및 관련사이트 */
 .gradient-box{
-    background:yellow;
-
+    background: #ccc linear-gradient(#ccc, #eee);
+    border: 1px solid #999;
+    border-radius: 5px;
+}
+.point-color{
+    color : #ed8625;
 }
 
+.event{
+    position: relative;
+}
+
+.event , .related{
+    background: yellow;
+    margin : 0 10px;
+}
+
+.event-heading, .related-heading {
+    margin : 10px 0 ;
+    font-size : 1.5rem;
+}
+
+.event p{
+    margin : 10px 0;
+}
+
+.event em{
+    font-style: normal;
+}
+
+.event img{
+    border: 1px solid #eee;
+    /* shadow는 상자 크기에 영향을 주지 않는다. */
+    box-shadow: 5px 5px 0 0 #666;
+} 
+
+.btn-event{
+    background: pink;
+    position: absolute;
+    top : 0;
+    right : 0;
+    height: 18px;
+    overflow: hidden;
+}
+
+/* button 은 inline-block */
+.btn-event button{
+    background-image: url(./images/back_forward.png); 
+    background-repeat : no-repeat;
+    background-color: transparent;
+    width: 19px;
+    height: 100%;
+    padding: 18px 0 0 0;
+    border : 0;
+    cursor: pointer;
+}
+
+.btn-event-next{
+    background-position: 100% 0;
+}
 
 .slogan{
-    background-color: orange;
+    background: orange;
     padding: 15px 0;
 }
 
