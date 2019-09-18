@@ -21,6 +21,14 @@ a{
     white-space: nowrap; /* 줄바꿈을 하지않음. */
     opacity: 0; /* 투명도  */
 }
+
+/* clearfix - float 이슈를 해결하기 위한 선언 */
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
 html{
     font-size: 10px;
 }
@@ -841,7 +849,7 @@ input[type="search"]{
     border-top: 1px solid #aaa;   
 }
 
-.event-heading, .related-heading {
+.event-heading, .related-heading, .favorite-heading {
     margin : 10px 0 ;
     font-size : 1.5rem;
 }
@@ -942,17 +950,95 @@ input[type="search"]{
     justify-content: center; */
 }
     
+.favorite{
+    margin-top : 20px;
+    padding : 0 10px;
+}
+
+.favorite-list{
+    padding-left : 0;
+    list-style: none;
+    counter-reset: 0;
+}
+
+.favorite-list li{
+    /* display : flex;
+    align-items: center;  */
+    /*y축 중간 매치*/
+    position: relative;
+    margin: 8px 0;
+    /* font-size : 20px; */
+    counter-increment: number;
+} 
+
+.favorite-list li::before{
+    /* content: attr(class); */
+    content: counter(number);
+    color : #fff;
+    font-size : 1.2rem;
+    background: #999;
+    border-radius: 3px;
+    padding : 2px 5px;
+    margin-right : 5px;
+    display: inline-block;
+    vertical-align: middle;
+    /* float : left; */
+}
+.favorite-list a{
+    display: inline-block;
+    vertical-align: middle;
+
+    /* float : left; */
+}
+
+.favorite-list em {
+    background: url(./images/rank.png) no-repeat;
+    /* margin-left: auto; */
+    font-style : normal;
+    width: 9px; /*em은 inline 이지만 flexitem화되어서 가능함*/
+    height: 11px;
+    text-indent: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    /* float : right; */
+    margin-top : -5px;
+    position : absolute;
+    top : 50%;
+    right : 0;
+}
+
+em.stop{
+    background-position: 0 50%;
+}
+
+em.down{
+    background-position: 0 100%;
+}
+
+.favorite-more{
+    position: absolute;
+    top : 10px;
+    right: 10px;
+}
+
+.favorite-more::before{
+    color : hsla(110,80%,20%,1);
+}
+
+
+
+/* 5 */
 
 .slogan{
-    background: orange;
-    padding: 15px 0;
+    background: orange;
+    padding: 15px 0;
 }
-
+    
 .footer-bg{
-    background-color: silver;
-    padding: 15px 0;
+    background-color: silver;
+    padding: 15px 0;
 }
-
+    
 .footer{
-    background-color: yellow;
+    background-color: yellow;
 }
