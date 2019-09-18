@@ -834,8 +834,11 @@ input[type="search"]{
 }
 
 .event , .related{
-    background: yellow;
     margin : 0 10px;
+}
+
+.related{
+    border-top: 1px solid #aaa;   
 }
 
 .event-heading, .related-heading {
@@ -845,6 +848,7 @@ input[type="search"]{
 
 .event p{
     margin : 10px 0;
+    line-height: 1.5;
 }
 
 .event em{
@@ -862,25 +866,82 @@ input[type="search"]{
     position: absolute;
     top : 0;
     right : 0;
-    height: 18px;
-    overflow: hidden;
 }
 
 /* button 은 inline-block */
 .btn-event button{
-    background-image: url(./images/back_forward.png); 
-    background-repeat : no-repeat;
     background-color: transparent;
-    width: 19px;
-    height: 100%;
-    padding: 18px 0 0 0;
+    width: 18px;
+    height: 18px;
+    padding: 0;
     border : 0;
     cursor: pointer;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
-.btn-event-next{
+/* cursor 는 after에게 상속되어짐 */
+.btn-event button::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left : 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(./images/back_forward.png); 
+    background-repeat : no-repeat;
+
+}
+
+.btn-event-next::after{
     background-position: 100% 0;
 }
+
+.related-list{
+    background-color: white;
+    list-style: none;
+    border: 1px solid #999;
+    height: 27px;
+    padding-left: 0;
+    overflow: hidden;
+    transition : height 3s 0s,padding 3s 0s,background 2s 3s;
+}
+
+.related-list:hover, .related-list:focus{
+    padding : 10px 0;
+    background: yellow;
+    height : 147px;
+}
+
+.related-list li{
+    height: 25px;
+    padding : 2px;
+    position: relative;
+}
+
+.related-list a{
+    width: calc(100% - 4px);
+    position : absolute;
+    padding : 2px 0 2px 1em; 
+    left : 2px;
+    top : 50%;
+    transform: translateY(-50%);
+    /*     height: 100%; 
+    position: absolute;
+    top : 0;
+    left : 0;
+    right: 0;
+    bottom: 0; */
+    /* height: 100%; 
+    display: block;
+    line-height: 21px; */
+    /* height: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+    
 
 .slogan{
     background: orange;
