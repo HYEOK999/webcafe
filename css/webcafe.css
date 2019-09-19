@@ -39,7 +39,10 @@ body{
     color: #181818;
     font-family: 'Spoqa Han Sans', 'Sans-serif';
     font-weight: 400;
-    background: gray;
+    background: url(./images/bg_flower.png) no-repeat 50% 0 fixed,
+    #eee linear-gradient(#ccc,#eee,#fff) repeat 0 0 fixed;
+    /* background-size: 940px 382px, 100% 100px; */
+    /* bg-size : 앞-bgurl사이즈 , linear-gradient */
 }
 
 .header, .visual, .main-content, .slogan, .footer{ /*선택자의 그룹핑*/
@@ -48,10 +51,12 @@ body{
 }
 .header{
     box-sizing: border-box;
-    background-color: pink;
+    background-color: #fff;
     position: relative;
     /* logo의 기준으로 삼기 위해서 */
     padding: 0px 30px 50px 30px;
+    border-radius: 0 0 15px 15px;
+    /* border-radius:  */
 }
 /* 로고 */
 .logo{
@@ -179,7 +184,7 @@ body{
     padding-left : 0;
     margin: 0;
     list-style: none;
-    background-color: yellow;
+    /* background-color: yellow; */
     position: absolute;
     display: none;
     white-space: nowrap; 
@@ -231,7 +236,6 @@ body{
 }
 
 .visual{
-    background-color: lime;
     /* background: url(./images/bg_flower.png); */
     position: relative;
     height: 120px;
@@ -276,7 +280,6 @@ body{
 }
 
 .visual-text{
-    background-color: yellow;
     position: absolute;
     animation-name: text-ani; 
     animation-duration: 5s;
@@ -291,6 +294,7 @@ body{
     flex-direction: row;
     justify-content: space-between; 
     padding: 30px;
+    border-radius: 15px 15px 0 0;
     /* 
     flex-end : 오른쪽 , 
     justify-content
@@ -312,7 +316,7 @@ body{
     /* flex-grow: 1; */
 }
 .group3{
-    background-color: skyblue;
+    /* background-color: skyblue; */
     flex-basis: 190px;
     /* flex-grow: 2; */
 }
@@ -515,7 +519,7 @@ input[type="search"]{
 
 /* 게시판 */
 .board{
-    background-color: yellow;
+    /* background-color: yellow; */
     position: relative;
 }
 /* 게시판 리스트와 더보기 버튼(링크) 안보이게 설정 */
@@ -531,7 +535,7 @@ input[type="search"]{
     margin : 0;
     font-weight: 400;
     font-size: 1em;
-    background-color:skyblue;
+    /* background-color:skyblue; */
     position: absolute;
     top :0;
 }
@@ -567,13 +571,13 @@ input[type="search"]{
 
 .board li{
     margin : 8px 0 ;
-    background-color: lime;
+    /* background-color: lime; */
     display: flex;
     /* justify-content: space-between; */
 }
 
 .board li a {
-    background-color: silver;
+    /* background-color: silver; */
     /* width: 100%; */
     width: 270px;
     overflow: hidden;
@@ -582,12 +586,12 @@ input[type="search"]{
 }
 
 .board time{
-    background-color: rgb(206, 84, 62);
+    /* background-color: rgb(206, 84, 62); */
     margin-left : auto;
 }
 
 .board .more{
-    background-color: silver;
+    /* background-color: silver; */
     position: absolute;
     top : 0;
     right : 0;
@@ -870,7 +874,6 @@ input[type="search"]{
 } 
 
 .btn-event{
-    background: pink;
     position: absolute;
     top : 0;
     right : 0;
@@ -899,7 +902,6 @@ input[type="search"]{
     height: 100%;
     background-image: url(./images/back_forward.png); 
     background-repeat : no-repeat;
-
 }
 
 .btn-event-next::after{
@@ -953,6 +955,7 @@ input[type="search"]{
 .favorite{
     margin-top : 20px;
     padding : 0 10px;
+    position: relative;
 }
 
 .favorite-list{
@@ -987,7 +990,6 @@ input[type="search"]{
 .favorite-list a{
     display: inline-block;
     vertical-align: middle;
-
     /* float : left; */
 }
 
@@ -1025,20 +1027,112 @@ em.down{
     color : hsla(110,80%,20%,1);
 }
 
-
-
-/* 5 */
+/* 슬로건 */
 
 .slogan{
-    background: orange;
-    padding: 15px 0;
+    /* padding : 15px 100px 15px 180px; */
+    position: relative;
+
+    padding : 0 100px 15px 30px;
+    display: flex;
+    /* justify-content: space-between; */
 }
-    
+
+.slogan-heading{
+    /* position: absolute;
+    left : 30px;
+    bottom: -25px; */
+    /* margin : 0; */
+    min-width: 110px;
+    height: 83px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    /* line-height: 83px;
+    text-align: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     /* float: left;  */
+    margin-bottom: -30px; 
+    margin-right: 25px;
+    position: relative;
+    flex : 0 1 auto;
+}
+
+.slogan-heading::after{
+    content: '';
+    position: absolute;
+   /* heading이 line-height, text-align  */
+    top: 0;
+    left : 0;
+    width: 100%;
+    height: 100%;
+    background: url(./images/coffee.png) no-repeat;
+}
+
+.slogan-content{
+    margin : 0;
+    color:#a09784;
+    line-height:1.5; 
+    /* font-size: 1.3rem; */
+    /* float : right;
+    width: 615px; */
+    flex : 0 1 auto;
+}
+.slogan-content q::before{
+    /* quotes: "\0022" ""; */
+    font-size: 3rem;
+    position: relative;
+    top : 5px;
+}
+
+.slogan-content q::after{
+    /* quotes: "\0022" ""; */
+    content: "";
+}
+
 .footer-bg{
-    background-color: silver;
-    padding: 15px 0;
+    background: #ccc linear-gradient(#ccc, #eee, #fff) repeat 0 0 scroll;
+    padding : 15px 0;
 }
-    
+
 .footer{
-    background-color: yellow;
+    position: relative;
+    padding : 0 100px 0 150px;
+}
+
+/* 푸터 로고 */
+.footer-logo{
+    position: absolute;
+    top : 20px;
+    left : 35px;
+}
+
+/* 가이드 링크 모음 */
+.guide-list{
+    background-color: #333;
+    color: #fff;
+    padding-left : 0;
+    margin : 0;
+    list-style: none;
+    display : flex;
+    justify-content: space-around;
+    border-radius: 5px;
+}
+
+.guide-list a{
+    display: block;
+    padding : 8px 10px;
+    text-transform: uppercase;
+}
+/* 연락처 정보 */
+.address{
+    font-style: normal;
+    margin : 10px 0 5px;
+}
+/* 기술 로고 */
+.badge{
+    position: absolute;
+    top : 0; 
+    right : 0;
 }
