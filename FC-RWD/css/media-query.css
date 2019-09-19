@@ -1,0 +1,70 @@
+@charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 1em;
+    font-weight: 400;
+}
+/* 컨테이너 */
+.container{
+    background: silver;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+/* 헤더 */
+.header{
+    background: yellow;
+    height: 10vh; /*viewport height  보이는 화면에 100분의 10으로*/
+    width: 100%;
+    order: -1;
+}
+
+/* 네비게이션 */
+.navigation{
+    background: pink;
+    height: 10vh;
+    width: 100%;
+    order: -1;
+}
+
+/* 메인 콘텐츠 */
+.main-content{
+    background: skyblue;
+    height: 50vh;
+    width: 100%;
+}
+
+/* 광고 */
+.ad{
+    background: orange;
+    height: 20vh;
+    width: 100%;
+    order: -1;
+}
+
+/* 푸터 */
+.footer{
+    background: lime;
+    height: 10vh;
+    width: 100%;
+}
+
+@media screen and (min-width:801px){
+    /* 랩탑 메인 콘텐츠 */
+    .main-content{
+        order: -1;
+        width: 80%;
+    }
+    /* 랩탐 광고 */
+    .ad{
+        order: 0;
+        width: 20%;
+    }
+    .container{
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
