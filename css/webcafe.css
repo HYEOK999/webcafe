@@ -928,15 +928,15 @@ input[type="search"]{
     height: 25px;
     padding : 2px;
     position: relative;
-}
+} 
 
-.related-list a{
+ .related-list a{
     width: calc(100% - 4px);
     position : absolute;
     padding : 2px 0 2px 1em; 
     left : 2px;
     top : 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%); 
     /*     height: 100%; 
     position: absolute;
     top : 0;
@@ -950,7 +950,7 @@ input[type="search"]{
     display: flex;
     align-items: center;
     justify-content: center; */
-}
+} 
     
 .favorite{
     margin-top : 20px;
